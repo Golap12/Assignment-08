@@ -1,14 +1,16 @@
+import { useLoaderData } from 'react-router-dom';
 import Hero from '../components/Hero'
 import BooksContainer from './BooksContainer';
 
 const Home = () => {
 
-
+    const books = useLoaderData()
+    // console.log(books);
     return (
 
         <>
             <Hero></Hero>
-            <BooksContainer></BooksContainer>
+            <BooksContainer books={books}></BooksContainer>
         </>
     )
 }
