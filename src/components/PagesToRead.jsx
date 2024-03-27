@@ -45,7 +45,7 @@ const PagesToRead = () => {
     const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
     return (
-        <div className="flex justify-center items-center mt-10">
+        <div className="flex flex-col justify-center items-center mt-10 bg-[#13131308] p-5">
             <ResponsiveContainer width="100%" height={400}>
                 <BarChart
                     data={displayBook}
