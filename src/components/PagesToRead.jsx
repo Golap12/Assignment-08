@@ -4,13 +4,21 @@ import { getStoredBook } from '../utility/localstorage';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
 
-const RoundedRectBar = (props) => {
+const getPath = (x, y, width, height) => {
+    return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
+    ${x + width / 2}, ${y}
+    C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${x + width}, ${y + height}
+    Z`;
+  };
+  
+  const TriangleBar = (props) => {
     const { fill, x, y, width, height } = props;
+  
+    return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
+  };
 
-    return (
-        <rect x={x} y={y} width={width} height={height} rx={5} ry={5} fill={fill} />
-    );
-};
+
+
 
 const PagesToRead = () => {
     const books = useLoaderData();
@@ -53,7 +61,7 @@ const PagesToRead = () => {
                     <YAxis dataKey="pages" />
                     <Tooltip />
                     
-                    <Bar dataKey="pages" shape={<RoundedRectBar />}>
+                    <Bar dataKey="pages" shape={<TriangleBar />}>
                         {displayBook.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
                         ))}
