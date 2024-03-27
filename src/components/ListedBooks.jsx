@@ -4,7 +4,7 @@ import { Link, NavLink, Outlet } from "react-router-dom"
 
 const ListedBooks = () => {
 
-    
+
     const [tab, setTab] = useState(0)
 
 
@@ -16,9 +16,6 @@ const ListedBooks = () => {
                     <h1 className="text-center font-extrabold text-3xl">Books</h1>
                 </div>
 
-                <div className="mt-10 text-center">
-                    <button className="btn btn-primary">Sort By ^</button>
-                </div>
 
                 <div className="flex justify-center md:justify-start">
                     <div role="" className=" tabs-lifted mt-10 mb-10 ">
@@ -32,12 +29,12 @@ const ListedBooks = () => {
                     </div>
                 </div>
 
-                
+
             </div>
-            
+
             <Outlet></Outlet>
         </div>
-        
+
     )
 }
 

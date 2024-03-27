@@ -1,4 +1,7 @@
 import { json } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const getStoredBook = () =>{
     const storedBook = localStorage.getItem('book-application');
@@ -16,15 +19,11 @@ const saveBook = id => {
     if(!exists){
         storedBook.push(id);
         localStorage.setItem('book-application', JSON.stringify(storedBook))
+        toast('Added To ReadList')
+    }else{
+        toast.error('All ready Added')
     }
 }
-
-
-
-
-
-
-
 
 
 
@@ -49,6 +48,9 @@ const saveWish = id => {
     if(!exists){
         storedWish.push(id);
         localStorage.setItem('wish-book', JSON.stringify(storedWish))
+        toast('Added To WishList')
+    }else{
+        toast.error('All ready Added')
     }
 }
 
@@ -57,3 +59,5 @@ const saveWish = id => {
 
 
 export {getStoredBook, saveBook, getStoredWish, saveWish}
+
+

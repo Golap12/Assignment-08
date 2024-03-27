@@ -3,37 +3,54 @@ import { useLoaderData } from "react-router-dom";
 import { getStoredWish } from "../utility/localstorage";
 import WishListed from "./WishListed";
 
-
 const WishList = () => {
-
-
     const books = useLoaderData();
 
     const [wish, setWish] = useState([]);
+    const [displayWish, setDisplayWish] = useState([]);
 
-    useEffect(()=>{
+    const handleBookFilter = (filter) => {
+        let sortedBooks = [...wish];
+        
+        if (filter === 'rating') {
+            sortedBooks.sort((a, b) => b.rating - a.rating);
+        } else if (filter === 'pages') {
+            sortedBooks.sort((a, b) => a.totalPages - b.totalPages);
+        } else if (filter === 'year') {
+            sortedBooks.sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
+        }
+        
+        setDisplayWish(sortedBooks);
+    };
+
+    useEffect(() => {
         const storedWishId = getStoredWish();
 
-        if(books.length > 0){
-
+        if (books.length > 0) {
             const wishedBooks = [];
-            for(const id of storedWishId){
+            for (const id of storedWishId) {
                 const book = books.find(book => book.id === id)
-                if(book){
+                if (book) {
                     wishedBooks.push(book)
                 }
             }
-
             setWish(wishedBooks);
-
+            setDisplayWish(wishedBooks);
         }
     }, [])
 
     return (
-        <div className="flex flex-col gap-5">
-            {
-                wish.map(book => <WishListed key={book.key} book={book}></WishListed>)
-            }
+        <div className="flex flex-col gap-5 relative">
+            <div className="text-center absolute right-0 top-[-75px]">
+                <select className="border-2 rounded-lg p-2" onChange={(e) => handleBookFilter(e.target.value)}>
+                    <option value="rating">Sort By</option>
+                    <option value="rating">Rating</option>
+                    <option value="pages">Number Of Pages</option>
+                    <option value="year">Published Year</option>
+                </select>
+            </div>
+            
+            {displayWish.map(book => <WishListed key={book.key} book={book}></WishListed>)}
         </div>
     )
 }

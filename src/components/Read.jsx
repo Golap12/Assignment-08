@@ -1,45 +1,59 @@
-
-
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredBook } from "../utility/localstorage";
 import ReadList from "./ReadList";
 
 const Read = () => {
-
     const books = useLoaderData();
 
-    const [bookApplied, setBookApplied] = useState([]);
+    const [displayBook, setDisplayBook] = useState([]);
 
-    useEffect(()=>{
+    const handleBookFilter = (filter) => {
+        let sortedBooks = [...displayBook];
+        
+        if (filter === 'rating') {
+            sortedBooks.sort((a, b) => b.rating - a.rating);
+        } else if (filter === 'pages') {
+            sortedBooks.sort((a, b) => a.totalPages - b.totalPages);
+        } else if (filter === 'year') {
+            sortedBooks.sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
+        }
+        
+        setDisplayBook(sortedBooks);
+    };
+
+    useEffect(() => {
         const storedBookId = getStoredBook();
-        if(books.length){
-
+        if (books.length) {
             const bookRead = [];
-            for (const id of storedBookId){
-                const book = books.find(book => book.id === id);
-                if(book){
-                    bookRead.push(book)
+            for (const id of storedBookId) {
+                const book = books.find((book) => book.id === id);
+                if (book) {
+                    bookRead.push(book);
                 }
             }
-
-            setBookApplied(bookRead);
+            setDisplayBook(bookRead);
         }
-
-    } ,[])
-
-
-
-
-
+    }, [books]);
 
     return (
-        <div className="flex flex-col gap-5">
-            {
-              bookApplied.map(book => <ReadList book={book} key={book.id}></ReadList>)  
-            }
+        <div className="flex flex-col gap-5 relative">
+
+            <div className="text-center absolute right-0 top-[-75px]">
+                <select className="border-2 rounded-lg p-2" onChange={(e) => handleBookFilter(e.target.value)}>
+                    <option value="rating">Sort By</option>
+                    <option value="rating">Rating</option>
+                    <option value="pages">Number Of Pages</option>
+                    <option value="year">Published Year</option>
+                </select>
+            </div>
+            
+           
+            {displayBook.map((book) => (
+                <ReadList book={book} key={book.id}></ReadList>
+            ))}
         </div>
-    )
-}
+    );
+};
 
 export default Read;

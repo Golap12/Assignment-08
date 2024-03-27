@@ -19,7 +19,7 @@ const Details = () => {
     const handleRead = () => {
 
         saveBook(idInt);
-        toast('Added To ReadList')
+        // toast('Added To ReadList')
     }
 
 
@@ -28,7 +28,7 @@ const Details = () => {
     const handleWish = () => {
 
         saveWish(idInt);
-        toast('Added To WishList')
+        // toast('Added To WishList')
     }
 
     
