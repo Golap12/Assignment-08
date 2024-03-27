@@ -1,13 +1,13 @@
+import React from 'react'
 
+import { IoBookSharp } from "react-icons/io5";
+import { FiUsers } from "react-icons/fi";
+import { MdDateRange } from "react-icons/md";
 
-const WishList = ({book}) => {
-
-
-
-
+const ReadList = ({ book }) => {
     return (
         <div className='flex gap-5 border p-5 rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.2)]'>
-            {/* <div className='bg-[#1313130D] rounded-xl p-5'>
+            <div className='bg-[#1313130D] rounded-xl p-5'>
                 <img className='h-[200px] w-[150px]' src={book.image} alt="" />
             </div>
 
@@ -21,7 +21,7 @@ const WishList = ({book}) => {
                     <p className='font-bold'>Tag :</p>
                     <p className='font-medium text-sm text-[#23BE0A]'>#{book.tags[0]}</p>
                     <p className='font-medium text-sm text-[#23BE0A]'>#{book.tags[1]}</p>
-                    <p className='text-[#131313CC] text-sm font-semibold flex items-center gap-2'><p className='font-semibold'><MdDateRange size={20} /></p><p>Year Of Publishing :</p> {book.yearOfPublishing}</p>
+                    <div className='text-[#131313CC] text-sm font-semibold flex items-center gap-2'><p className='font-semibold'><MdDateRange size={20}/></p><p>Year Of Publishing :</p> {book.yearOfPublishing}</div>
                 </div>
 
                 <div className='flex gap-10 font-medium text-sm text-[#131313CC]'>
@@ -35,7 +35,7 @@ const WishList = ({book}) => {
 
                     <div className='flex gap-2'>
                         <div className='flex items-center gap-2'>
-                            <p><IoBookSharp size={15} /></p>
+                            <p><IoBookSharp size={15}/></p>
                             <p>Pages :</p>
                         </div>
                         <p>{book.totalPages}</p>
@@ -50,9 +50,9 @@ const WishList = ({book}) => {
                     <div className='bg-[#FFAC3326] text-[#FFAC33] rounded-2xl px-2 py-1 text-sm font-semibold'>Rating : {book.rating}</div>
                     <div className='bg-[#23BE0A] text-white rounded-2xl px-2 py-1 text-sm font-semibold'><button>View Details</button></div>
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }
 
-export default WishList;
+export default ReadList;
