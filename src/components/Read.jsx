@@ -4,6 +4,7 @@ import { getStoredBook } from "../utility/localstorage";
 import ReadList from "./ReadList";
 
 const Read = () => {
+    
     const books = useLoaderData();
 
     const [displayBook, setDisplayBook] = useState([]);
@@ -39,8 +40,8 @@ const Read = () => {
     return (
         <div className="flex flex-col gap-5 relative">
 
-            <div className="text-center absolute right-0 top-[-75px]">
-                <select className="border-2 rounded-lg p-2" onChange={(e) => handleBookFilter(e.target.value)}>
+            <div className="text-center md:absolute right-0 top-[-75px]">
+                <select className=" w-[100px] border-2 rounded-lg p-2" onChange={(e) => handleBookFilter(e.target.value)}>
                     <option value="rating">Sort By</option>
                     <option value="rating">Rating</option>
                     <option value="pages">Number Of Pages</option>

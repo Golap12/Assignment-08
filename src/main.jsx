@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
       {
         path: '/pagestoRead',
         element: <PagesToRead />,
+        loader: () => fetch('/books.json')
       },
       {
         path: '/details/:id',
@@ -56,10 +58,11 @@ const router = createBrowserRouter([
   },
 ]);
 
-<ToastContainer />
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <ToastContainer />
   </React.StrictMode>
 );

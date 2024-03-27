@@ -1,4 +1,4 @@
-import { json } from "react-router-dom";
+// import { json } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -13,6 +13,7 @@ const getStoredBook = () =>{
 }
 
 
+
 const saveBook = id => {
     const storedBook = getStoredBook();
     const exists = storedBook.find(bookId => bookId === id)
@@ -21,7 +22,7 @@ const saveBook = id => {
         localStorage.setItem('book-application', JSON.stringify(storedBook))
         toast('Added To ReadList')
     }else{
-        toast.error('All ready Added')
+        toast.error('Allready Added')
     }
 }
 
@@ -39,9 +40,6 @@ const getStoredWish = () =>{
     return [];
 }
 
-
-
-
 const saveWish = id => {
     const storedWish = getStoredWish();
     const exists = storedWish.find(bookId => bookId === id)
@@ -50,7 +48,7 @@ const saveWish = id => {
         localStorage.setItem('wish-book', JSON.stringify(storedWish))
         toast('Added To WishList')
     }else{
-        toast.error('All ready Added')
+        toast.error('Allready Added')
     }
 }
 

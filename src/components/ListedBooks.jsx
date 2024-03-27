@@ -18,7 +18,7 @@ const ListedBooks = () => {
 
 
                 <div className="flex justify-center md:justify-start">
-                    <div role="" className=" tabs-lifted mt-10 mb-10 ">
+                    <div role="" className=" tabs-lifted mt-10 md:mb-10 mb-5 ">
                         <Link to=''
                             onClick={() => setTab(0)} role="tab"
                             className={`tab ${tab === 0 ? 'tab-active' : ''}`}>Read Books</Link>

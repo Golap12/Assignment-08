@@ -11,7 +11,7 @@ const WishList = () => {
 
     const handleBookFilter = (filter) => {
         let sortedBooks = [...wish];
-        
+
         if (filter === 'rating') {
             sortedBooks.sort((a, b) => b.rating - a.rating);
         } else if (filter === 'pages') {
@@ -19,7 +19,7 @@ const WishList = () => {
         } else if (filter === 'year') {
             sortedBooks.sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
         }
-        
+
         setDisplayWish(sortedBooks);
     };
 
@@ -40,18 +40,20 @@ const WishList = () => {
     }, [])
 
     return (
+
         <div className="flex flex-col gap-5 relative">
-            <div className="text-center absolute right-0 top-[-75px]">
-                <select className="border-2 rounded-lg p-2" onChange={(e) => handleBookFilter(e.target.value)}>
+            <div className="text-center md:absolute right-0 top-[-75px]">
+                <select className="w-[100px] border-2 rounded-lg p-2" onChange={(e) => handleBookFilter(e.target.value)}>
                     <option value="rating">Sort By</option>
                     <option value="rating">Rating</option>
                     <option value="pages">Number Of Pages</option>
                     <option value="year">Published Year</option>
                 </select>
             </div>
-            
-            {displayWish.map(book => <WishListed key={book.key} book={book}></WishListed>)}
+
+            {displayWish.map(book => <WishListed key={book.id} book={book}></WishListed>)}
         </div>
+
     )
 }
 
