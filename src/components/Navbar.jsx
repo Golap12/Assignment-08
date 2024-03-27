@@ -10,24 +10,7 @@ const Navbar = () => {
   </>
 
   return (
-    // <div className="md:p-10 p-5 flex justify-between items-center">
-    //   <div>
-    //     <button className="text-2xl text-[#131313] font-bold">Book Vive</button>
-    //   </div>
-    //   <div className="md:flex gap-5 hidden list-none">
-    //     {/* <li><a className="px-5 py-3 text-lg font-semibold text-[#23BE0A] border-[#23BE0A] border rounded-lg">Home</a></li>
-    //     <li><a className="px-5 py-3 border rounded-lg">Listed Books</a></li>
-    //     <li><a className="px-5 py-3 border rounded-lg">Pages To Read</a></li> */}
-    //     {links}
-    //   </div>
-    //   <div className=" flex gap-5">
-    //     <button className="md:px-6 px-3 md:py-3 py-2 text-white font-semibold bg-[#23BE0A] rounded-lg">Sign In</button>
-    //     <button className="md:px-6 px-3 md:py-3 py-2 text-white font-semibold bg-[#59C6D2] rounded-lg">Sign Up</button>
-    //   </div>
-    // </div>
-
-
-    <div className="navbar bg-base-100 ">
+    <div className="navbar ">
       <div className="navbar-start w-full md:w-[50%]">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

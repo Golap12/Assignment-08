@@ -1,7 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import Home from './components/Home'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import Home from './components/Home';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -10,36 +10,49 @@ import Root from './components/root/Root';
 import ListedBooks from './components/ListedBooks';
 import PagesToRead from './components/PagesToRead';
 import Details from './components/Details';
+import WishList from './components/WishList';
+import Read from './components/Read';
+
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root></Root>,
+    element: <Root />,
     children: [
       {
         path: '/',
-        element: <Home></Home>,
+        element: <Home />,
       },
       {
         path: '/listedbooks',
-        element: <ListedBooks></ListedBooks>
+        element: <ListedBooks />,
+        children: [
+          {
+            index: true,
+            element: <Read />,
+          },
+          {
+            path: 'wishlist',
+            element: <WishList />,
+          },
+        ]
       },
       {
         path: '/pagestoRead',
-        element: <PagesToRead></PagesToRead>
+        element: <PagesToRead />,
       },
       {
         path: '/details/:id',
-        element: <Details></Details>
-        // loader: () => fetch('../books.json')
+        element: <Details />,
+        loader: () => fetch('books.json')
       },
     ]
   },
 ]);
 
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);

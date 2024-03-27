@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import background from "../../public/img/hero.png";
 
 const componentName = () => {
@@ -9,13 +10,15 @@ const componentName = () => {
                     <div className="flex flex-col space-y-10">
                         <h1 className="md:text-5xl text-3xl font-bold md:w-[450px]">Books to freshen up your bookshelf</h1>
 
-                        <div>
-                            <button className="btn bg-[#23BE0A] text-white text-xl font-bold">View The List</button>
-                        </div>
+                        <Link to='/listedbooks'>
+                            < div >
+                                <button className="btn bg-[#23BE0A] text-white text-xl font-bold">View The List</button>
+                            </div>
+                        </Link>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 

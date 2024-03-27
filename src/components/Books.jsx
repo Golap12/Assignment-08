@@ -6,7 +6,6 @@ const Books = ({ book }) => {
 
     const { bookId, bookName, image, author, tags, category, rating } = book;
 
-    console.log(book);
 
     return (
         <Link to={`/details/${bookId}`}>
