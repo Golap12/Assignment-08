@@ -2,7 +2,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { saveBook, saveWish} from "../utility/localstorage";
+import { getStoredBook, saveBook, getStoredWish, saveWish } from "../utility/localstorage";
 
 
 
@@ -14,17 +14,25 @@ const Details = () => {
     const book = books.find(book => book.id === idInt);
 
 
-    
+
 
     const handleRead = () => {
         saveBook(idInt);
     }
 
     const handleWish = () => {
-        saveWish(idInt);
+
+        const booksId = getStoredBook();
+        
+        if (booksId.includes(idInt)) {
+            toast.error('Already Read')
+        } else {
+            saveWish(idInt);
+            toast('Added To WishList')
+        }
     }
 
-    
+
 
     return (
 

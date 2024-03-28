@@ -7,6 +7,7 @@ const WishList = () => {
     const books = useLoaderData();
 
     const [wish, setWish] = useState([]);
+    
     const [displayWish, setDisplayWish] = useState([]);
 
     const handleBookFilter = (filter) => {
@@ -15,15 +16,16 @@ const WishList = () => {
         if (filter === 'rating') {
             sortedBooks.sort((a, b) => b.rating - a.rating);
         } else if (filter === 'pages') {
-            sortedBooks.sort((a, b) => a.totalPages - b.totalPages);
+            sortedBooks.sort((a, b) => b.totalPages - a.totalPages);
         } else if (filter === 'year') {
-            sortedBooks.sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
+            sortedBooks.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
         }
 
         setDisplayWish(sortedBooks);
     };
 
     useEffect(() => {
+
         const storedWishId = getStoredWish();
 
         if (books.length > 0) {

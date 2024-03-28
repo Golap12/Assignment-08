@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const ReadList = ({ book }) => {
     return (
         <div className='md:flex gap-5 border p-5 rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.2)]'>
-            <div className='bg-[#1313130D] rounded-xl p-5'>
+            <div className='bg-[#1313130D] rounded-xl p-5 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]'>
                 <img className='h-[200px] w-[150px]' src={book.image} alt="" />
             </div>
 

@@ -4,22 +4,22 @@ import { getStoredBook } from "../utility/localstorage";
 import ReadList from "./ReadList";
 
 const Read = () => {
-    
+
     const books = useLoaderData();
 
     const [displayBook, setDisplayBook] = useState([]);
 
     const handleBookFilter = (filter) => {
         let sortedBooks = [...displayBook];
-        
+
         if (filter === 'rating') {
             sortedBooks.sort((a, b) => b.rating - a.rating);
         } else if (filter === 'pages') {
-            sortedBooks.sort((a, b) => a.totalPages - b.totalPages);
+            sortedBooks.sort((a, b) => b.totalPages - a.totalPages);
         } else if (filter === 'year') {
-            sortedBooks.sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
+            sortedBooks.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
         }
-        
+
         setDisplayBook(sortedBooks);
     };
 
@@ -39,7 +39,7 @@ const Read = () => {
 
 
 
-    
+
 
     return (
         <div className="flex flex-col gap-5 relative">
@@ -52,8 +52,8 @@ const Read = () => {
                     <option value="year">Published Year</option>
                 </select>
             </div>
-            
-           
+
+
             {displayBook.map((book) => (
                 <ReadList book={book} key={book.id}></ReadList>
             ))}

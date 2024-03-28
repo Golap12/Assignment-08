@@ -15,6 +15,10 @@ import Read from './components/Read';
 import Error from './components/error/Error';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Bookshelf from './components/Bookshelf';
+import Contact from './components/Contact';
+import SignIn from './components/SignIn';
+import Login from './components/Login';
 
 
 
@@ -56,6 +60,23 @@ const router = createBrowserRouter([
         path: '/details/:id',
         element: <Details />,
         loader: () => fetch('/books.json')
+      },
+      {
+        path: '/bookshelf',
+        element: <Bookshelf />,
+        loader: () => fetch('/books2.json')
+      },
+      {
+        path: '/contact',
+        element: <Contact />,
+      },
+      {
+        path: '/sign-in',
+        element: <SignIn />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
       },
     ]
   },

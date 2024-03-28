@@ -1,12 +1,15 @@
 // import { json } from "react-router-dom";
+// import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const getStoredBook = () =>{
+
+
+const getStoredBook = () => {
     const storedBook = localStorage.getItem('book-application');
 
-    if(storedBook){
+    if (storedBook) {
         return JSON.parse(storedBook)
     }
     return [];
@@ -17,12 +20,12 @@ const getStoredBook = () =>{
 const saveBook = id => {
     const storedBook = getStoredBook();
     const exists = storedBook.find(bookId => bookId === id)
-    if(!exists){
+    if (!exists) {
         storedBook.push(id);
         localStorage.setItem('book-application', JSON.stringify(storedBook))
         toast('Added To ReadList')
-    }else{
-        toast.error('Allready Added')
+    } else {
+        toast.error('Already Added')
     }
 }
 
@@ -31,24 +34,25 @@ const saveBook = id => {
 
 
 
-const getStoredWish = () =>{
+
+
+const getStoredWish = () => {
     const storedWish = localStorage.getItem('wish-book');
 
-    if(storedWish){
+    if (storedWish) {
         return JSON.parse(storedWish)
     }
     return [];
 }
 
+
 const saveWish = id => {
     const storedWish = getStoredWish();
     const exists = storedWish.find(bookId => bookId === id)
-    if(!exists){
+
+    if (!exists) {
         storedWish.push(id);
         localStorage.setItem('wish-book', JSON.stringify(storedWish))
-        toast('Added To WishList')
-    }else{
-        toast.error('Allready Added')
     }
 }
 
@@ -56,6 +60,6 @@ const saveWish = id => {
 
 
 
-export {getStoredBook, saveBook, getStoredWish, saveWish}
+export { getStoredBook, saveBook, getStoredWish, saveWish }
 
 

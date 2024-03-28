@@ -10,8 +10,8 @@ const Books = ({ book }) => {
     return (
         <Link to={`/details/${id}`}>
 
-            <div className=" space-y-6 p-6 border rounded-2xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
-                <div className="flex justify-center bg-[#F3F3F3] p-8 rounded-2xl"><img className="w-[134px] h-[166px]" src={image} alt="" /></div>
+            <div className=" space-y-6 p-6 border rounded-2xl shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
+                <div className="flex justify-center bg-[#F3F3F3] p-8 rounded-2xl shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"><img className="w-[134px] h-[166px]" src={image} alt="" /></div>
                 <div className="flex justify-between font-medium text-sm text-[#23BE0A]">
                     <h3>{tags[0]}</h3>
                     <h3>{tags[1]}</h3>

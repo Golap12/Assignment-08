@@ -22,6 +22,8 @@ const getPath = (x, y, width, height) => {
 
 const PagesToRead = () => {
     const books = useLoaderData();
+
+    
     const [displayBook, setDisplayBook] = useState([]);
 
     useEffect(() => {
@@ -45,7 +47,7 @@ const PagesToRead = () => {
     const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
     return (
-        <div className="flex flex-col justify-center items-center mt-10 bg-[#13131308] p-5">
+        <div className="flex flex-col justify-center items-center mt-10 bg-[#13131308] p-5 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
             <ResponsiveContainer width="100%" height={400}>
                 <BarChart
                     data={displayBook}
