@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link, NavLink } from "react-router-dom"
 
 const SignIn = () => {
 
@@ -46,7 +46,7 @@ const SignIn = () => {
                 </button>
             </div>
             <p className="text-xs text-center sm:px-6 dark:text-gray-600">Don't have an account?
-                <a rel="noopener noreferrer" href="#" className="underline dark:text-gray-800">Sign up</a>
+                <Link to={'/login'} rel="noopener noreferrer" href="#" className="underline dark:text-gray-800">Sign up</Link>
             </p>
         </div>
        

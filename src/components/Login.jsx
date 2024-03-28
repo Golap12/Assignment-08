@@ -1,4 +1,4 @@
-
+import { Link, NavLink } from "react-router-dom"
 
 const Login = () => {
     return (
@@ -27,7 +27,7 @@ const Login = () => {
                         <button type="button" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Sign in</button>
                     </div>
                     <p className="px-6 text-sm text-center dark:text-gray-600">Don't have an account yet?
-                        <a rel="noopener noreferrer" href="#" className="hover:underline dark:text-violet-600">Sign in</a>.
+                        <Link to={'/sign-in'} rel="noopener noreferrer" href="#" className="hover:underline dark:text-violet-600">Sign in</Link>.
                     </p>
                 </div>
             </form>

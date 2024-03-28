@@ -2,7 +2,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { getStoredBook, saveBook, getStoredWish, saveWish } from "../utility/localstorage";
+import { getStoredBook, saveBook, saveWish } from "../utility/localstorage";
 
 
 
@@ -20,6 +20,9 @@ const Details = () => {
         saveBook(idInt);
     }
 
+
+
+
     const handleWish = () => {
 
         const booksId = getStoredBook();
@@ -28,7 +31,7 @@ const Details = () => {
             toast.error('Already Read')
         } else {
             saveWish(idInt);
-            toast('Added To WishList')
+            toast.success('Added To WishList')
         }
     }
 
@@ -77,9 +80,13 @@ const Details = () => {
 
                     </div>
                     <div className="flex gap-5">
+
+
                         <button onClick={handleRead} className="btn border-2 border-black rounded-lg text-lg font-bold">Read</button>
 
                         <button onClick={handleWish} className="btn bg-[#50B1C9] text-white rounded-lg text-lg font-bold">Wishlist</button>
+
+
                     </div>
                 </div>
             </div>

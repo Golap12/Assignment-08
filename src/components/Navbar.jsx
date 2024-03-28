@@ -26,7 +26,7 @@ const Navbar = () => {
         </div>
 
         <Link to={'/'} className=" text-4xl text-[#131313] font-bold">Book Vive</Link>
-        <a className="w-[40px] h-[40px] text-white font-semibold bg-[#59C6D2] rounded-full md:hidden flex justify-center items-center"><FaRegUserCircle size={25}/></a>
+        <Link to={'/sign-in'} className="w-[40px] h-[40px] text-white font-semibold bg-[#59C6D2] rounded-full md:hidden flex justify-center items-center"><FaRegUserCircle size={25}/></Link>
       </div>
 
       <div className="navbar-center hidden lg:flex">

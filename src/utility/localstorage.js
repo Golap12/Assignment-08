@@ -1,5 +1,4 @@
-// import { json } from "react-router-dom";
-// import { useState } from 'react';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -23,7 +22,7 @@ const saveBook = id => {
     if (!exists) {
         storedBook.push(id);
         localStorage.setItem('book-application', JSON.stringify(storedBook))
-        toast('Added To ReadList')
+        toast.success('Added To ReadList')
     } else {
         toast.error('Already Added')
     }
