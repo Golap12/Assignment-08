@@ -5,15 +5,15 @@ import { FaRegUserCircle } from "react-icons/fa";
 const Navbar = () => {
 
   const links = <>
-    <li><NavLink className={` px-4 py-2  font-semibold  border rounded-lg`} to='/'>Home</NavLink></li>
-    <li><NavLink className={`px-4 py-2  font-semibold border rounded-lg`} to='/listedbooks'>Listed Books</NavLink></li>
-    <li><NavLink className={`px-4 py-2  font-semibold border rounded-lg`} to='/pagestoRead'>Pages To Read</NavLink></li>
-    <li><NavLink className={`px-4 py-2  font-semibold border rounded-lg`} to='/bookshelf'>Bookshelf</NavLink></li>
-    <li><NavLink className={`px-4 py-2  font-semibold border rounded-lg`} to='/contact'>Contact</NavLink></li>
+    <li><NavLink className={  ({isActive})=> isActive? 'border-[#23BE0A] text-[#23BE0A] px-3 py-2 font-semibold  border rounded-lg':'px-3 py-2 font-semibold rounded-lg'} to='/'>Home</NavLink></li>
+    <li><NavLink className={  ({isActive})=> isActive? 'border-[#23BE0A] text-[#23BE0A] px-3 py-2 font-semibold  border rounded-lg':'px-3 py-2 font-semibold rounded-lg'} to='/listedbooks'>Listed Books</NavLink></li>
+    <li><NavLink className={  ({isActive})=> isActive? 'border-[#23BE0A] text-[#23BE0A] px-3 py-2 font-semibold  border rounded-lg':'px-3 py-2 font-semibold rounded-lg'} to='/pagestoRead'>Pages To Read</NavLink></li>
+    <li><NavLink className={  ({isActive})=> isActive? 'border-[#23BE0A] text-[#23BE0A] px-3 py-2 font-semibold  border rounded-lg':'px-3 py-2 font-semibold rounded-lg'} to='/bookshelf'>Bookshelf</NavLink></li>
+    <li><NavLink className={  ({isActive})=> isActive? 'border-[#23BE0A] text-[#23BE0A] px-3 py-2 font-semibold  border rounded-lg':'px-3 py-2 font-semibold rounded-lg'} to='/contact'>Contact</NavLink></li>
   </>
 
   return (
-    <div className="flex shadow-lg p-2 items-center rounded-lg">
+    <div className="flex shadow-lg p-4 items-center rounded-lg">
       <div className="navbar-start items-center md:justify-start justify-between flex w-full md:w-[50%]">
         <div className="dropdown">
 
@@ -30,12 +30,12 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-3">
+        <ul className=" menu-horizontal px-1 gap-3 text-sm">
           {links}
         </ul>
       </div>
 
-      <div className="navbar-end gap-5 hidden md:flex">
+      <div className="navbar-end gap-4 text-sm hidden md:flex">
         <Link to={'sign-in'} className=" px-4 py-2 text-white font-semibold bg-[#23BE0A] rounded-lg">Sign In</Link>
         <Link to={'login'} className=" px-4 py-2 text-white font-semibold bg-[#59C6D2] rounded-lg">Sign Up</Link>
       </div>

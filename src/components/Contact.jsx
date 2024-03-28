@@ -38,7 +38,7 @@ const Contact = () => {
                         </p>
                     </div>
                 </div>
-                <form novalidate="" className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
+                <form noValidate="" className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
                     <label className="block">
                         <span className="mb-1">Full name</span>
                         <input type="text" placeholder="Enter Your Name" className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100" />

@@ -7,7 +7,7 @@ const Bookshelf = () => {
 
 
     const bookshelf = useLoaderData();
-    console.log(bookshelf);
+    
 
 
 
