@@ -12,8 +12,5 @@
 - **Styling Framework:** Tailwind CSS
 - **Client-Side Scripting:** JavaScript
 
-<<<<<<< HEAD
+
 # Live Link : https://glistening-blancmange-7faeb4.netlify.app/
-=======
-# Live Link : https://glistening-blancmange-7faeb4.netlify.app/
->>>>>>> 4cd2e553669ad00cda8e87382bf3b85c593cfe40
