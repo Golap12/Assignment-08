@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { IoBookSharp } from "react-icons/io5";
 import { FiUsers } from "react-icons/fi";
 import { MdDateRange } from "react-icons/md";

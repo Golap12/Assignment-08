@@ -13,7 +13,7 @@ const Navbar = () => {
   </>
 
   return (
-    <div className="flex shadow-lg p-4 items-center rounded-lg">
+    <div className="flex shadow-lg p-4 items-center rounded-lg ">
       <div className="navbar-start items-center md:justify-start justify-between flex w-full md:w-[50%]">
         <div className="dropdown">
 

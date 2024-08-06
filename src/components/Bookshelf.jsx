@@ -1,7 +1,7 @@
-import { CiStar } from "react-icons/ci";
+
 import { useLoaderData } from "react-router-dom";
 import BookshelfCard from "./BookshelfCard";
-// import { Link } from "react-router-dom";
+
 
 const Bookshelf = () => {
 

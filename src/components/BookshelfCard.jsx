@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import { CiStar } from "react-icons/ci";
-import { Link } from "react-router-dom";
+
 
 
 const BookshelfCard = ({ book }) => {
 
-    const { title, tags, category, rating, pages, language, link, imageLink, country, author, year } = book
+    const { title, tags, category, rating, imageLink, author} = book
 
     return (
 
